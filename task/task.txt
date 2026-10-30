@@ -1,0 +1,35 @@
+SELECT *
+FROM employees
+WHERE first_name > 'ahmed'
+  AND first_name < 'ali';
+
+الكود ده بيعرض الموظفين اللي اسمهم الأول أبجديًا أكبر من 'ahmed ' 
+واصغر من 'ali'
+
+
+
+SELECT *
+FROM employees
+WHERE ROWNUM = 1;
+
+
+بيشتغل
+لأنه بيجيب أول صف، وأول صف بياخد الرقم 1 وبالتالي الشرط بيتحقق
+
+Query 2:
+SELECT *
+FROM employees
+WHERE ROWNUM = 2;
+
+
+مش بيشتغل
+لأنه أول صف بياخد الرقم 1 والشرط بيطلب الرقم 2 فالصف بيرفض وبالتالي Oracle مش بتوصل للصف التاني
+
+Query 3:
+SELECT *
+FROM employees
+WHERE ROWNUM = 3;
+
+
+مش بيشتغل
+نفس الفكرة، أول صف بياخد الرقم 1 ولما يترفض مش بنوصل للرقم 3
